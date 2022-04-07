@@ -1,13 +1,10 @@
-import styled from 'styled-components';
-import ReactSlider from 'react-slider';
+import styled from "styled-components";
+import ReactSlider from "react-slider";
 
 export const TypeContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
   width: 704px;
   border-right: 1px solid #edeae3;
-  display: flex;
-  flex-direction: column;
-  padding-left: 16px;
+  padding: 16px;
 
   @media (max-width: 500px) {
     display: flex;
@@ -27,7 +24,6 @@ export const FilterTitle = styled.div`
   letter-spacing: 0px;
   color: #9c8c8c;
   opacity: 1;
-  margin-top: 23px;
 
   &.type {
     padding-left: 16px;
@@ -35,6 +31,7 @@ export const FilterTitle = styled.div`
 `;
 export const ButtonContainer = styled.div`
   display: flex;
+  gap: 12px;
   padding-bottom: 16px;
 
   @media (max-width: 500px) {
@@ -42,56 +39,24 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const FilterButton = styled.button`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
-  background: #ffffff;
-  border: 1px solid #edeae3;
-  border-radius: 8px;
-  width: 156px;
-  height: 88px;
-  margin-right: 16px;
-  margin-top: 16px;
-
-  &.button {
-    background: #ffffff;
-    border: 1px solid #edeae3;
-    border-radius: 8px;
-  }
-
-  &.button-clicked {
-    background: #ffffff;
-    border: 2px solid #119383;
-    border-radius: 8px;
-  }
-`;
 export const ButtonTitle = styled.div`
   height: 21px;
-  text-align: left;
-  font: normal normal normal 16px/16px Roboto, sans-serif;
-  letter-spacing: 0px;
+  font-size: 16px;
   color: #1f2244;
-  opacity: 1;
   // margin-top: 11px;
-  margin-left: 12px;
+  /* margin-left: 12px; */
 `;
 export const ButtonDescription = styled.div`
   color: #9c8c8c;
-  text-align: left;
-  font: normal normal normal 12px/14px Roboto, sans-serif;
-  letter-spacing: 0px;
-  opacity: 1;
+  font-size: 12px;
+  line-height: 14px;
   margin-left: 12px;
 `;
 
 export const SliderContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  height: 170px;
   width: 344px;
   border-right: 1px solid #edeae3;
-  padding-right: 16px;
+  padding: 16px 16px 16px 0;
 
   @media (max-width: 500px) {
     display: flex;
@@ -129,7 +94,6 @@ export const InputContainer = styled.div`
   border: 1px solid #edeae3;
   padding-right: 12px;
   border-radius: 8px;
-  margin-bottom: 16px;
 `;
 
 export const Input = styled.input`
@@ -153,7 +117,7 @@ export const StyledTrack = styled.div`
   top: 0;
   bottom: 0;
   background: ${(props) =>
-    props.index === 2 ? '#EDEAE3' : props.index === 1 ? '#119383' : '#EDEAE3'};
+    props.index === 2 ? "#EDEAE3" : props.index === 1 ? "#119383" : "#EDEAE3"};
   border-radius: 999px;
 `;
 

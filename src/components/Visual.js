@@ -4,14 +4,13 @@ export const SearchContainer = styled.div`
   background: #ffff;
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  height: 170px;
   border-bottom: 1px solid #edeae3;
-
+  
   @media (max-width: 500px) {
+    height: unset;
+    flex-direction: column;
     justify-content: left;
     padding: 0 0 16px 16px;
-    flex-wrap: wrap;
   }
 `;
 

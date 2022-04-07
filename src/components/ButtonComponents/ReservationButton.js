@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   DropDownContainer,
   DropDownHeader,
@@ -12,12 +12,12 @@ import {
   SelectContainer,
   SelectLabel,
   SelectOption,
-} from './ButtonElements';
-import iconReservation from '../../../images/iconReservation.svg';
-import iconExpand from '../../../images/iconExpand.svg';
-import Image from 'next/image';
+} from "./ButtonElements";
+import iconReservation from "../../../public/images/iconReservation.svg";
+import iconExpand from "../../../public/images/iconExpand.svg";
+import Image from "next/image";
 
-const options = ['Ano', 'Ne'];
+const options = ["Ano", "Ne"];
 
 function ReservationButton() {
   // const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ function ReservationButton() {
     <SelectContainer>
       <SelectLabel>
         Okamžitá rezervace
-        <Image src={iconReservation} width={13} height={13} />
+        <Image src={iconReservation} width={13} height={13} alt="" />
       </SelectLabel>
       <SelectButton>
         <option>{options[0]}</option>

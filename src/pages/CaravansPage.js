@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import CaravanComponent from '../components/CaravanComponent';
+import React, { useEffect, useState } from "react";
+import CaravanComponent from "../components/CaravanComponent";
 import {
   Caravans,
   CaravansSection,
-} from '../components/CaravanComponent/CaravanElements';
-import Search from '../components/Search';
+} from "../components/CaravanComponent/CaravanElements";
+import Search from "../components/Search";
 
 const CaravansPage = () => {
   const [filteredCaravans, setFilteredCaravans] = useState([]);
+  const [caravans, setCaravans] = useState([]);
+  const [filter, setFilter] = useState({
+    Campervan: false,
+    BuiltIn: false,
+    Intergrated: false,
+    Alcove: false,
+  });
+
+  useEffect(() => {
+    fetchCaravans();
+  }, []);
 
   const filterCaravans = () => {
     let newFilteredCaravans = [];
@@ -21,36 +32,28 @@ const CaravansPage = () => {
     setFilteredCaravans(newFilteredCaravans);
   };
 
-  useEffect(() => {
-    fetchCaravans();
-  }, []);
-
-  const [caravans, setCaravans] = useState([]);
-  const [filter, setFilter] = useState({
-    Campervan: false,
-    BuiltIn: false,
-    Intergrated: false,
-    Alcove: false,
-  });
   function setOneFilter(filterName, value) {
     filter[filterName] = value;
     setFilter(filter);
     console.log(filter);
     filterCaravans();
   }
+
   const fetchCaravans = async () => {
     const caravansData = await fetch(`http://127.0.0.1:3000/api/data`);
     const caravansJson = await caravansData.json();
     setCaravans(caravansJson.items);
+    setFilteredCaravans(caravansJson.items);
   };
+
   return (
     <div>
       <Search setOneFilter={setOneFilter} />
       <CaravansSection>
         <Caravans>
-          {filteredCaravans.map((caravan, idx) =>
-            CaravanComponent(caravan, idx)
-          )}
+          {filteredCaravans.map((caravan, idx) => (
+            <CaravanComponent key={idx} caravan={caravan}></CaravanComponent>
+          ))}
         </Caravans>
       </CaravansSection>
     </div>

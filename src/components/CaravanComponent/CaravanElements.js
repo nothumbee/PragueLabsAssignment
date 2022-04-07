@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CaravanContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
-  width: 392px;
+  /* width: 392px; */
+  /* width: calc((100% - 32px) / 3); */
   height: 451px;
 
   background: var(--white) 0% 0% no-repeat padding-box;
@@ -14,23 +13,28 @@ export const CaravanContainer = styled.div`
   opacity: 1;
 `;
 export const Caravans = styled.div`
-  width: 1240px;
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-
-  justify-content: space-between;
+  /* display: flex;
+  flex-wrap: wrap; 
+  gap: 16px; */
   margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 
   @media (max-width: 500px) {
     justify-content: center;
     flex-wrap: wrap;
   }
 `;
-export const CaravansSection = styled.div`
+
+const MaxWidthContainer = styled.div`
+  max-width: 1240px;
+  margin: auto;
+`;
+
+export const CaravansSection = styled(MaxWidthContainer)`
   background: transparent;
-  display: flex;
-  justify-content: center;
 `;
 
 export const CaravanDescription = styled.section`
